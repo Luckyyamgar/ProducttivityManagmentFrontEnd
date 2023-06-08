@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import productService from "./ProductService";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -10,6 +11,7 @@ const AddProduct = () => {
   });
 
   const [msg, setMsg] = useState("");
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -30,10 +32,12 @@ const AddProduct = () => {
           price: "",
           status: "",
         });
+        navigate("/")
       })
       .catch((error) => {
         console.log(error);
       });
+      
   };
 
   return (

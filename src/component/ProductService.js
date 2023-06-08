@@ -17,11 +17,11 @@ class ProductService {
     }
 
     deleteProduct(id) {
-        return axios.get(API_URL + "/delete/" + id);
+        return axios.delete(API_URL + "/delete/" + id);
     }
 
     editProduct(product) {
-        return axios.post(API_URL + "/editProduct/" + product.id, product);
+        return axios.post(API_URL + "/editproduct/" + product.id, product );
     }
 
 }

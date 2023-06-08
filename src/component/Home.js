@@ -20,11 +20,22 @@ const Home = () => {
       });
   };
 
-  const deleteProduct = (id) => {
+
+  // const deleteProduct = async (id) => {
+  //   try {
+  //     await productService.deleteProduct(id);
+  //     setMsg("Delete Successfully");
+  //     await init();
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+  const deleteProduct = async (id) => {
+    console.log("in")
     productService
       .deleteProduct(id)
       .then((res) => {
-        
+       // setProductList(res.data)
         setMsg("Delete Sucessfully");
         init();
       })
